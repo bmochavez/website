@@ -3,90 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Your Name - R&D Director, Innovator, Author</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Inter font globally */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Example: Use Lora for headings if added */
+            /* h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; } */
+        }
+        /* Smooth scrolling behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Section title underline style */
+        .section-title {
+            display: inline-block;
+            border-bottom: 3px solid #3b82f6; /* Blue color, adjust as needed */
+            padding-bottom: 0.3rem;
+            margin-bottom: 2rem; /* Increased margin */
+        }
+
+        /* Mobile Menu Button Styling */
+        #menu-button {
+            transition: transform 0.3s ease;
+        }
+        #menu-button.open .icon-open {
+             display: none;
+        }
+        #menu-button.open .icon-close {
+             display: block;
+        }
+        #menu-button .icon-close {
+            display: none;
+        }
+
+        /* Mobile Menu Styling */
+        #mobile-menu {
+            transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            pointer-events: none; /* Prevent interaction when hidden */
+        }
+        #mobile-menu.open {
+            max-height: 500px; /* Adjust as needed */
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Ensure main content area has enough scroll padding */
+        /* scroll-mt values adjusted for sticky header height */
+        section {
+            scroll-margin-top: 80px; /* Adjust based on your final header height */
+        }
+        @media (min-width: 1024px) { /* lg breakpoint */
+             section {
+                 scroll-margin-top: 20px; /* Less needed when nav is on side */
+             }
+        }
+
+    </style>
 </head>
-<body>
+<body class="bg-gray-100 text-gray-800 antialiased">
 
-    <header class="site-header container">
-        <a href="index.html" class="logo">Your Name</a>
-        <!-- Navigation could go here if needed, but the inspiration site is minimal -->
-        <!-- <nav> <a href="#about">About</a> </nav> -->
-    </header>
+    <div class="lg:flex">
 
-    <main>
-        <section class="hero container">
-            <h1>Creative Developer & Designer focused on crafting engaging digital experiences.</h1>
-            <!-- Optional Subtitle -->
-            <!-- <p>Based in [Your Location]</p> -->
-        </section>
+        <aside class="lg:w-1/4 lg:h-screen lg:sticky lg:top-0 bg-white lg:shadow-md p-6 lg:p-8 lg:flex lg:flex-col">
+            <div class="flex justify-between items-center lg:block mb-6 lg:mb-8">
+                 <div>
+                    <a href="#" class="text-2xl lg:text-3xl font-bold text-gray-900 hover:text-blue-600 transition duration-300">Your Name</a>
+                    <p class="text-sm lg:text-base text-gray-500 mt-1">R&D Director, Innovator, Author</p>
+                 </div>
+                 <div class="lg:hidden">
+                    <button id="menu-button" type="button" class="text-gray-600 hover:text-blue-600 focus:outline-none focus:text-blue-600" aria-label="Toggle menu">
+                         <svg class="h-6 w-6 fill-current icon-open" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+                        </svg>
+                         <svg class="h-6 w-6 fill-current icon-close" viewBox="0 0 24 24">
+                             <path fill-rule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.828-4.828-4.828a1 1 0 0 1 1.414-1.414l4.828 4.828 4.829-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.828 4.828 4.828z"/>
+                        </svg>
+                    </button>
+                 </div>
+            </div>
 
-        <section class="project-grid container">
-            <!-- Project Item 1 -->
-            <a href="project-detail.html" class="project-card">
-                <img src="https://via.placeholder.com/600x400/333/888?text=Project+1" alt="Project 1 Thumbnail">
-                <div class="project-info">
-                    <h2>Project Title One</h2>
-                    <p>Category / Short Description</p>
+            <nav id="mobile-menu" class="lg:flex lg:flex-col lg:grow lg:opacity-100 lg:max-h-full lg:pointer-events-auto lg:mt-8 space-y-3 lg:space-y-4">
+                <a href="#about" class="block lg:inline-block text-gray-600 hover:text-blue-600 transition duration-300 py-2 lg:py-0 font-medium">About</a>
+                <a href="#research" class="block lg:inline-block text-gray-600 hover:text-blue-600 transition duration-300 py-2 lg:py-0 font-medium">Research</a>
+                <a href="#publications" class="block lg:inline-block text-gray-600 hover:text-blue-600 transition duration-300 py-2 lg:py-0 font-medium">Publications</a>
+                <a href="#blog" class="block lg:inline-block text-gray-600 hover:text-blue-600 transition duration-300 py-2 lg:py-0 font-medium">Blog</a>
+                <a href="#contact" class="block lg:inline-block text-gray-600 hover:text-blue-600 transition duration-300 py-2 lg:py-0 font-medium">Contact</a>
+            </nav>
+
+            <div class="hidden lg:block mt-auto pt-8 border-t border-gray-200">
+                <div class="flex space-x-4">
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600 transition duration-300" aria-label="LinkedIn">
+                        <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 53.79-54.3c29.7 0 53.79 24.2 53.79 54.3a53.79 53.79 0 0 1-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+                    </a>
+                    <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600 transition duration-300" aria-label="Twitter">
+                         <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+                    </a>
+                    </div>
+                <p class="text-xs text-gray-400 mt-4">&copy; 2025 Your Name</p>
+            </div>
+        </aside>
+
+        <main class="lg:w-3/4 p-6 md:p-10 lg:p-12">
+
+            <section id="intro" class="text-left mb-16 md:mb-20">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Driving Innovation in [Your Field]</h1>
+                <p class="text-lg text-gray-600 max-w-3xl">
+                    A brief, impactful statement about your mission, expertise, or current focus.
+                    Replace this with your compelling headline.
+                </p>
+            </section>
+
+            <section id="about" class="mb-16 md:mb-20">
+                <h2 class="section-title text-2xl lg:text-3xl font-bold text-gray-800">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-10">
+                    <div class="w-full md:w-auto flex-shrink-0 text-center md:text-left">
+                        <img src="https://placehold.co/200x200/e2e8f0/cbd5e0?text=Your+Photo"
+                             alt="Your Name"
+                             class="rounded-full shadow-lg mx-auto md:mx-0 w-40 h-40 md:w-48 md:h-48 object-cover border-4 border-white"
+                             onerror="this.onerror=null; this.src='https://placehold.co/200x200/e2e8f0/cbd5e0?text=Image+Error';">
+                    </div>
+                    <div class="flex-grow">
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Replace this with your detailed biography. Talk about your background, experience, key achievements,
+                            and areas of expertise (e.g., Machine Learning, AI Ethics, Quantum Computing, Biotechnology, etc.).
+                            Mention your roles (R&D Director, Innovator, Author) and what drives your work.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Add another paragraph or two to elaborate on your vision, philosophy, or specific interests within
+                            your field. Highlight what makes your approach unique.
+                        </p>
+                        <div class="mt-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Key Areas:</h3>
+                            <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                <li>Area 1 (e.g., Artificial Intelligence)</li>
+                                <li>Area 2 (e.g., Research Leadership)</li>
+                                <li>Area 3 (e.g., Technology Strategy)</li>
+                                <li>Area 4 (e.g., Scientific Writing)</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </a>
+            </section>
 
-            <!-- Project Item 2 -->
-            <a href="project-detail.html" class="project-card">
-                <img src="https://via.placeholder.com/600x400/444/999?text=Project+2" alt="Project 2 Thumbnail">
-                <div class="project-info">
-                    <h2>Project Title Two</h2>
-                    <p>Web Development</p>
+            <section id="research" class="mb-16 md:mb-20">
+                <h2 class="section-title text-2xl lg:text-3xl font-bold text-gray-800">Research & Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition duration-300">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Project Title 1</h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Brief description of the project, its goals, and your role.
+                            Keep it concise and impactful. Use a bit more detail here.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:underline font-medium text-sm">Learn More &rarr;</a>
+                        <div class="mt-3 text-xs text-gray-500">
+                            <span>#AI</span> <span>#Ethics</span>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition duration-300">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Project Title 2</h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Another project description. Highlight key technologies or outcomes. Explain the significance briefly.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:underline font-medium text-sm">View Details &rarr;</a>
+                         <div class="mt-3 text-xs text-gray-500">
+                            <span>#QuantumComputing</span>
+                        </div>
+                    </div>
+                    </div>
+            </section>
+
+            <section id="publications" class="mb-16 md:mb-20">
+                <h2 class="section-title text-2xl lg:text-3xl font-bold text-gray-800">Publications</h2>
+                <div class="space-y-6">
+                    <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-lg font-semibold text-gray-900">"Title of Your Publication or Book Chapter 1"</h3>
+                        <p class="text-gray-600 text-sm mb-2">Authors: Your Name, Co-author 1, Co-author 2 (Year)</p>
+                        <p class="text-gray-700 italic text-sm">Journal or Conference Name, Vol. X, Issue Y, pp. 123-456.</p>
+                        <a href="#" class="text-blue-600 hover:underline text-sm font-medium mt-1 inline-block">Link to Paper/DOI &rarr;</a>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-lg font-semibold text-gray-900">"Title of Your Publication or Book 2"</h3>
+                        <p class="text-gray-600 text-sm mb-2">Authors: Your Name (Year)</p>
+                        <p class="text-gray-700 italic text-sm">Publisher Name or Conference Proceedings.</p>
+                        <a href="#" class="text-blue-600 hover:underline text-sm font-medium mt-1 inline-block">View Abstract &rarr;</a>
+                    </div>
+                    <div class="pt-4">
+                         <a href="#" class="inline-block bg-blue-600 text-white px-5 py-2 rounded-md text-sm hover:bg-blue-700 transition duration-300">View All Publications</a>
+                     </div>
                 </div>
-            </a>
+            </section>
 
-            <!-- Project Item 3 -->
-            <a href="project-detail.html" class="project-card">
-                <img src="https://via.placeholder.com/600x400/555/aaa?text=Project+3" alt="Project 3 Thumbnail">
-                <div class="project-info">
-                    <h2>Project Title Three</h2>
-                    <p>UI/UX Design</p>
+            <section id="blog" class="mb-16 md:mb-20">
+                <h2 class="section-title text-2xl lg:text-3xl font-bold text-gray-800">Latest Insights</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
+                         <img src="https://placehold.co/600x350/e0f2fe/0ea5e9?text=Blog+Image+1" alt="Blog Post 1" class="w-full h-48 object-cover"
+                              onerror="this.onerror=null; this.src='https://placehold.co/600x350/e2e8f0/cbd5e0?text=Image+Error';">
+                         <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Blog Post Title 1</h3>
+                             <p class="text-gray-500 text-xs mb-3">Date Published | Category</p>
+                            <p class="text-gray-600 mb-4 text-sm leading-relaxed flex-grow">
+                                A short excerpt or summary of the blog post. Entice readers to click through.
+                            </p>
+                            <a href="#" class="text-blue-600 hover:underline font-medium mt-auto text-sm self-start">Read More &rarr;</a>
+                         </div>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
+                         <img src="https://placehold.co/600x350/dbeafe/3b82f6?text=Blog+Image+2" alt="Blog Post 2" class="w-full h-48 object-cover"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x350/e2e8f0/cbd5e0?text=Image+Error';">
+                         <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Blog Post Title 2</h3>
+                            <p class="text-gray-500 text-xs mb-3">Date Published | Category</p>
+                            <p class="text-gray-600 mb-4 text-sm leading-relaxed flex-grow">
+                                Another interesting insight or update you want to share.
+                            </p>
+                            <a href="#" class="text-blue-600 hover:underline font-medium mt-auto text-sm self-start">Read More &rarr;</a>
+                         </div>
+                    </div>
+                    </div>
+                 <div class="text-left mt-8">
+                     <a href="#" class="inline-block bg-gray-200 text-gray-800 px-5 py-2 rounded-md text-sm hover:bg-gray-300 transition duration-300">Visit Blog</a>
+                 </div>
+            </section>
+
+            <section id="contact" class="bg-white p-8 md:p-10 rounded-lg shadow-md border border-gray-200">
+                <h2 class="section-title text-2xl lg:text-3xl font-bold text-gray-800 text-center">Get In Touch</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-xl mx-auto">
+                    Interested in collaborating, discussing research, or have a question? Feel free to reach out.
+                    Replace this text with your preferred contact message.
+                </p>
+                <div class="text-center space-y-3">
+                    <p class="text-lg text-gray-700">
+                        Email: <a href="mailto:your.email@example.com" class="text-blue-600 hover:underline">your.email@example.com</a>
+                    </p>
+                    <p class="text-lg text-gray-700">
+                        LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">linkedin.com/in/yourprofile</a>
+                    </p>
+                     <p class="text-lg text-gray-700">
+                        Twitter: <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">@yourprofile</a>
+                    </p>
+                    </div>
+            </section>
+
+            <footer class="mt-16 border-t pt-6 lg:hidden">
+                <div class="flex justify-center space-x-5 mb-4">
+                     <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600 transition duration-300" aria-label="LinkedIn">
+                        <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 53.79-54.3c29.7 0 53.79 24.2 53.79 54.3a53.79 53.79 0 0 1-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+                    </a>
+                    <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600 transition duration-300" aria-label="Twitter">
+                         <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+                    </a>
                 </div>
-            </a>
+                <p class="text-center text-sm text-gray-500">&copy; 2025 Your Name. All rights reserved.</p>
+            </footer>
 
-            <!-- Project Item 4 -->
-             <a href="project-detail.html" class="project-card">
-                <img src="https://via.placeholder.com/600x400/353535/888?text=Project+4" alt="Project 4 Thumbnail">
-                <div class="project-info">
-                    <h2>Project Title Four</h2>
-                    <p>Interactive Installation</p>
-                </div>
-            </a>
-             <!-- Add more project cards as needed -->
+        </main>
 
-        </section>
+    </div> <script>
+        // Mobile Menu Toggle Script
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        <!-- Optional About Section -->
-        <!--
-        <section id="about" class="about-section container">
-            <h2>About Me</h2>
-            <p>A brief paragraph about yourself, your skills, and your passion.</p>
-        </section>
-        -->
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            menuButton.classList.toggle('open'); // Toggle class on button for icon change
+        });
 
-    </main>
+        // Close mobile menu when a link is clicked (optional, good for SPA feel)
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            // Add check for lg screen to prevent closing desktop nav
+            link.addEventListener('click', () => {
+                 if (window.innerWidth < 1024) { // 1024px is Tailwind's lg breakpoint
+                    mobileMenu.classList.remove('open');
+                    menuButton.classList.remove('open');
+                 }
+            });
+        });
 
-    <footer class="site-footer container">
-        <p>&copy; <span id="year"></span> Your Name. All Rights Reserved.</p>
-        <div class="social-links">
-            <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="mailto:your.email@example.com">Email</a>
-            <!-- Add other links like Twitter, Instagram etc. -->
-        </div>
-    </footer>
+         // Optional: Close mobile menu if clicked outside of it on small screens
+         document.addEventListener('click', (event) => {
+             if (window.innerWidth < 1024) {
+                const isClickInsideMenu = mobileMenu.contains(event.target);
+                const isClickOnButton = menuButton.contains(event.target);
 
-    <script>
-        // Simple script to update the year automatically
-        document.getElementById('year').textContent = new Date().getFullYear();
+                if (!isClickInsideMenu && !isClickOnButton && mobileMenu.classList.contains('open')) {
+                    mobileMenu.classList.remove('open');
+                    menuButton.classList.remove('open');
+                }
+            }
+        });
+
     </script>
 
 </body>
