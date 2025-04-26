@@ -3,78 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brunella Mori - Program & Project Management Expert</title>
-    <meta name="description" content="Welcome to the official website of Brunella Mori. Discover my expertise in program management, project management, and organizational change management.">
-    <meta name="keywords" content="Brunella Mori, Program Management, Project Management, Change Management, Coaching, Training">
-    <meta name="author" content="Brunella Mori">
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Top Menu -->
-    <header class="top-menu">
-        <nav class="menu-container">
-            <ul class="menu">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Hero Section -->
-    <header class="hero" id="hero">
-        <div class="hero-content">
-            <h1>Brunella Mori</h1>
-            <p>Program & Project Management Expert</p>
-            <a href="#about" class="button">Learn More</a>
-        </div>
+
+    <header class="site-header container">
+        <a href="index.html" class="logo">Your Name</a>
+        <!-- Navigation could go here if needed, but the inspiration site is minimal -->
+        <!-- <nav> <a href="#about">About</a> </nav> -->
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
+    <main>
+        <section class="hero container">
+            <h1>Creative Developer & Designer focused on crafting engaging digital experiences.</h1>
+            <!-- Optional Subtitle -->
+            <!-- <p>Based in [Your Location]</p> -->
+        </section>
+
+        <section class="project-grid container">
+            <!-- Project Item 1 -->
+            <a href="project-detail.html" class="project-card">
+                <img src="https://via.placeholder.com/600x400/333/888?text=Project+1" alt="Project 1 Thumbnail">
+                <div class="project-info">
+                    <h2>Project Title One</h2>
+                    <p>Category / Short Description</p>
+                </div>
+            </a>
+
+            <!-- Project Item 2 -->
+            <a href="project-detail.html" class="project-card">
+                <img src="https://via.placeholder.com/600x400/444/999?text=Project+2" alt="Project 2 Thumbnail">
+                <div class="project-info">
+                    <h2>Project Title Two</h2>
+                    <p>Web Development</p>
+                </div>
+            </a>
+
+            <!-- Project Item 3 -->
+            <a href="project-detail.html" class="project-card">
+                <img src="https://via.placeholder.com/600x400/555/aaa?text=Project+3" alt="Project 3 Thumbnail">
+                <div class="project-info">
+                    <h2>Project Title Three</h2>
+                    <p>UI/UX Design</p>
+                </div>
+            </a>
+
+            <!-- Project Item 4 -->
+             <a href="project-detail.html" class="project-card">
+                <img src="https://via.placeholder.com/600x400/353535/888?text=Project+4" alt="Project 4 Thumbnail">
+                <div class="project-info">
+                    <h2>Project Title Four</h2>
+                    <p>Interactive Installation</p>
+                </div>
+            </a>
+             <!-- Add more project cards as needed -->
+
+        </section>
+
+        <!-- Optional About Section -->
+        <!--
+        <section id="about" class="about-section container">
             <h2>About Me</h2>
-            <p>Hello, I’m Brunella Mori, a seasoned Program and Project Management expert. I specialize in helping organizations achieve their goals through effective strategies, coaching, and transformational change initiatives.</p>
-        </div>
-    </section>
+            <p>A brief paragraph about yourself, your skills, and your passion.</p>
+        </section>
+        -->
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2>My Services</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <h3>Program Management</h3>
-                    <p>Driving strategic initiatives effectively and efficiently.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Project Management</h3>
-                    <p>Delivering successful projects on time and within budget.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Organizational Change</h3>
-                    <p>Guiding organizations through transformational change.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Coaching</h3>
-                    <p>Helping individuals and teams enhance their skills and succeed.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out for inquiries about my services or collaborations.</p>
-            <a href="mailto:brunella.mori@example.com" class="button">Get in Touch</a>
+    <footer class="site-footer container">
+        <p>&copy; <span id="year"></span> Your Name. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="mailto:your.email@example.com">Email</a>
+            <!-- Add other links like Twitter, Instagram etc. -->
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Brunella Mori. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // Simple script to update the year automatically
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
 </body>
 </html>

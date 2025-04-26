@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title One - Your Name</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="site-header container">
+        <a href="index.html" class="logo">Your Name</a>
+        <!-- Optional: Link back to all projects -->
+        <!-- <nav><a href="index.html#projects">All Projects</a></nav> -->
+    </header>
+
+    <main class="project-detail-page">
+
+        <!-- Project Hero Image/Video -->
+        <section class="project-hero-banner">
+            <img src="https://via.placeholder.com/1200x600/555/aaa?text=Project+Hero+Image" alt="Project Title One Hero Image">
+            <!-- Or use a video -->
+            <!-- <video autoplay loop muted playsinline>
+                <source src="path/to/your/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video> -->
+        </section>
+
+        <section class="project-content container">
+            <h1>Project Title One</h1>
+
+            <div class="project-meta">
+                 <p><strong>Role:</strong> Lead Developer, UI Design</p>
+                 <p><strong>Client:</strong> Example Corp</p>
+                 <p><strong>Year:</strong> 2023</p>
+                 <p><strong>Tech:</strong> React, Node.js, CSS Grid</p>
+            </div>
+
+            <div class="project-description">
+                <p>This is a detailed description of the project. Talk about the challenge, the process, your role, and the solution. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <!-- Add more paragraphs as needed -->
+            </div>
+
+            <!-- Optional: More Images/Videos -->
+            <div class="project-gallery">
+                <h2>Gallery</h2>
+                <img src="https://via.placeholder.com/800x500/444/999?text=Supporting+Image+1" alt="Project Detail Image 1">
+                <img src="https://via.placeholder.com/800x500/333/888?text=Supporting+Image+2" alt="Project Detail Image 2">
+                <!-- Add more images or videos -->
+            </div>
+
+            <!-- Optional: Link to Live Site/Repo -->
+            <div class="project-links">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="button">Visit Live Site</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="button alt">View Code on GitHub</a>
+            </div>
+
+        </section>
+
+         <!-- Optional: Navigation to next/previous project -->
+         <nav class="project-navigation container">
+            <a href="project-detail-prev.html">&larr; Previous Project</a>
+            <a href="project-detail-next.html">Next Project &rarr;</a>
+        </nav>
+
+    </main>
+
+    <footer class="site-footer container">
+         <p>&copy; <span id="year"></span> Your Name. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="mailto:your.email@example.com">Email</a>
+        </div>
+    </footer>
+
+     <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
