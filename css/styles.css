@@ -17,7 +17,7 @@
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -169,52 +169,6 @@ a {
 .contact h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-}
-
-.hero, .about, .services, .contact {
-    padding-top: 4rem;
-}
-
-/* Top Menu */
-.top-menu {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 10;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.menu-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.menu {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-.menu li {
-    margin: 0 1rem;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s ease;
-}
-
-.menu a:hover {
-    color: #007BFF;
 }
 
 /* Add padding to sections to avoid overlap with fixed menu */
